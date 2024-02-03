@@ -1,11 +1,13 @@
-#include <raylib.h>
+#include "Game.h"
 
 int main()
 {
-    InitWindow(1280, 720, "Fortnite");
 
-    while (true)
-    {
+	Game* game = new Game(Vector2(1280, 720));
+	game->Run();
 
-    }
+
+
+
+	delete game;
 }
