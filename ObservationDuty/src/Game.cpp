@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include <raylib.h>
 
 Game::Game(const Vector2& resolution)
 	: res(resolution)
