@@ -1,4 +1,4 @@
-workspace "ObservationDuty"
+workspace "SpaceSentinel"
 
     architecture "x86_64"
 
@@ -6,7 +6,7 @@ workspace "ObservationDuty"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "ObservationDuty"
+project "SpaceSentinel"
 
     kind "ConsoleApp"
     

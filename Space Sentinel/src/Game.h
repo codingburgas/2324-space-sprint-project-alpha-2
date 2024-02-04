@@ -2,7 +2,7 @@
 #include "Utils.h"
 
 
-#define TITLE "Space Observer"
+#define TITLE "Space Sentinel"
 
 class Game
 {

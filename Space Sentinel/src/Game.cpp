@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <raylib.h>
+#include "Button.h"
 
 Game::Game(const Vector2& resolution)
 	: res(resolution)
@@ -22,7 +23,7 @@ void Game::Run()
 	{
 		BeginDrawing();
 
-		DrawTextSCentered(font, TITLE, Vector2(50, 7), 64, RAYWHITE);
+		DrawTextSCentered(font, TITLE, Vector2(50, 10), 64, RAYWHITE);
 
 		EndDrawing();
 	}
