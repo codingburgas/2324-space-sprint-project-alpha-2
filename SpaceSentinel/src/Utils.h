@@ -41,6 +41,6 @@ inline void DrawTextCentered(const Font& font, const char* text, const Vector2& 
 inline void DrawTextSCentered(const Font& font, const char* text, const Vector2& pos, const float& fontSize, const Color& fontColor)
 {
     DrawTextEx(font, text, Vector2(GetRenderWidth() / 100.f * (pos.x - 0.2f) - MeasureTextEx(font, text, fontSize, 2).x / 2.f, GetRenderHeight() / 100.f * (pos.y + 0.2f) - MeasureTextEx(font, text, fontSize, 2).y / 2.f), fontSize, 2, fontColor - Color(150, 150, 150, 255));
-    
+
     DrawTextEx(font, text, Vector2(GetRenderWidth() / 100.f * pos.x - MeasureTextEx(font, text, fontSize, 2).x / 2.f, GetRenderHeight() / 100.f * pos.y - MeasureTextEx(font, text, fontSize, 2).y / 2.f), fontSize, 2, fontColor);
 }
