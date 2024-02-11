@@ -21,14 +21,8 @@ void Game::Run()
     SetWindowState(FLAG_FULLSCREEN_MODE);
 
     Font font;
-    Texture2D button1;
-    Texture2D background = LoadTexture("SpaceSentinel/images/MainMenuBackground.png");
-
-    button1 = LoadTexture("SpaceSentinel/Images/Button.png");
 
     font = LoadFont("SpaceSentinel/fonts/Audiowide-Regular.ttf");
-
-    int buttonPosX = (res.x - button1.width) / 2;
 
     while (!WindowShouldClose())
     {
@@ -50,7 +44,5 @@ void Game::Run()
 
         EndDrawing();
     }
-
-    UnloadTexture(background);
     CloseWindow();
 }
