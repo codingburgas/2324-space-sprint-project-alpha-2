@@ -41,7 +41,11 @@ Our idea is about Solar System and the gravity of the planets.
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/C%2B%2B_logo.png" alt="C++ logo" width="48px">
 </p>
  
-
+## ⚙️ Installation	<a name = "installation"></a>
+````	
+1. cmd 
+2. git clone https://github.com/codingburgas/2324-space-sprint-project-alpha-2.git
+````
 
 
 ## 👏 Appreciation
