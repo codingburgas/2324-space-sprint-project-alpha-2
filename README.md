@@ -1,11 +1,11 @@
 <h1 align="center">Alpha 2</h1>
 <br>
 <p align="center">
-<img width="40%" src=""/>
+<img width="45%" src="./design/logo.png"/>
 <br>
 
 ## 💡 Our Idea
-
+Our idea is about Solar System and the gravity of the planets.
 #### 
  
 ## 📄 Documentation and Presentation
@@ -28,28 +28,21 @@
 <p align="left"> 
 <img src="https://developer.sas.com/github-resources/_jcr_content/par/styledcontainer_480618029/par/image.img.png/1558449533927.png" alt="GitHub logo" width=48px>
 <img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=48px />
-<img src=""/>
+<img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" width=48/>
 <img src="https://admin.kuleuven.be/icts/services/teams/images/Teamslogo/image" alt="Teams logo" width=54px>
 <img src="https://avatars.githubusercontent.com/u/18133?s=200&v=4" alt="Git logo" width=48px>
-<img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" alt="MS PowerPoint logo" width=48px />
-<img src=""/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/1200px-Visual_Studio_Icon_2022.svg.png" alt="MS VisualStudio logo" width=48px />
 </p> 
 <br>
  
 ## 💻 Languages
  
    <p align="left"> 
-<img src="" width="120px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/32/C%2B%2B_logo.png" alt="C++ logo" width="48px">
 </p>
  
 
- 
-## ⚙️ Installation	<a name = "installation"></a>
-````	
-1. 
-2. 
-3. 
-````
+
 
 ## 👏 Appreciation
 ```
