@@ -3,6 +3,9 @@
 #include <vector>
 #include <string>
 #include <windows.h>
+#include <ctime>
+#include <cstdlib>
+#include <algorithm>
 
 using namespace std;
 
@@ -27,7 +30,6 @@ struct Planet {
     string name;
     double gravity; // Gravity in m/s^2
     string fact;
-
 };
 
 // Function to display game instructions
@@ -50,8 +52,8 @@ void displayCredits() {
     displayCentered("==== Credits ====");
     displayCentered("Scrum - Stefan Ivanov");
     displayCentered("Back-end Developer - Veselin Boyanov");
-    displayCentered("Back-end Developer (Designer) - Mihail Nikolov");
-    displayCentered("Back-end Developer (QA) - Viktor Kanev");
+    displayCentered("Back-end Developer - Mihail Nikolov");
+    displayCentered("Back-end Developer - Viktor Kanev");
     displayCentered("=======================");
     displayCentered("Press any key to go back to main menu.");
     cin.ignore(); // Ignore any previous newline character
@@ -59,86 +61,57 @@ void displayCredits() {
 }
 
 // Function to start the game
-void startGame(const vector<Planet>& planets) {
-    system("cls");
-    displayInstructions();
+void startGame() {
+    // Array of questions about planets
+    vector<pair<string, string>> questions = {
+        {"Which planet is closest to the Sun?", "Mercury"},
+        {"Which planet is known as the Red Planet?", "Mars"},
+        {"What is the largest planet in our solar system?", "Jupiter"},
+        {"Which planet has the most moons?", "Jupiter"},
+        {"Which planet is nicknamed the 'Morning Star' or 'Evening Star'?", "Venus"},
+        {"Which planet has the shortest day?", "Jupiter"},
+        {"Which planet is known for its beautiful rings?", "Saturn"},
+        {"Which planet is known as the 'Blue Planet'?", "Earth"},
+        {"Which planet is sometimes called Earth's sister planet?", "Venus"},
+        {"What is the smallest planet in our solar system?", "Mercury"},
+        {"Which planet has the highest mountain in the solar system?", "Mars"},
+        {"Which planet is the only one known to support life?", "Earth"},
+        {"Which planet is known for its Great Dark Spot?", "Neptune"},
+        {"Which planet spins on its side?", "Uranus"},
+        {"Which planet is known as the 'Ice Giant'?", "Neptune"},
+        {"Which planet has the longest day?", "Venus"},
+        {"Which planet has the most rings?", "Saturn"},
+        {"Which planet is known as the 'Red Planet'?", "Mars"},
+        {"Which planet is known as the 'Evening Star'?", "Venus"},
+    };
 
-    // Initialize game variables
-    const int targetX = 50; // Target destination X coordinate
-    const int targetY = 5;  // Target destination Y coordinate
-    int spaceshipX = 10;    // Initial spaceship X coordinate
-    int spaceshipY = 20;    // Initial spaceship Y coordinate
-    double velocityX = 0;   // Initial velocity along X axis
-    double velocityY = 0;   // Initial velocity along Y axis
-    double accelerationX = 0; // Initial acceleration along X axis
-    double accelerationY = 0; // Initial acceleration along Y axis
-    double gravity = planets[0].gravity; // Initial gravity
+    // Shuffle the questions
+    random_shuffle(questions.begin(), questions.end());
 
-    // Main game loop
-    bool gameover = false;
-    while (!gameover) {
-        system("cls");
+    int score = 0;
+    int totalQuestions = questions.size(); // Number of questions
 
-        // Update velocity and position based on acceleration
-        velocityX += accelerationX;
-        velocityY += accelerationY;
-        spaceshipX += static_cast<int>(velocityX);
-        spaceshipY += static_cast<int>(velocityY);
-
-        // Display spaceship
-        cout << setw(spaceshipX) << "  ^  " << endl;
-        cout << setw(spaceshipX - 1) << " /_\\ " << endl;
-
-        // Display target destination
-        cout << setw(targetX) << "  X  " << endl;
-        cout << setw(targetX) << "     " << endl;
-
-        // Display planet
-        cout << setw(0) << "Planet: " << planets[0].name << " (Gravity: " << planets[0].gravity << " m/s^2)" << endl;
-
-        // Check for collision with planet
-        if (spaceshipX == 0 || spaceshipY == 0) {
-            displayCentered("Spaceship crashed into the planet!");
-            gameover = true;
+    // Ask questions
+    for (int i = 0; i < totalQuestions; ++i) {
+        cout << "Question " << i + 1 << ": " << questions[i].first << endl;
+        string userAnswer;
+        cout << "Your answer: ";
+        cin >> userAnswer; // Getting input using cin
+        if (userAnswer == questions[i].second) {
+            cout << "Correct!\n";
+            ++score;
         }
-
-        // Check for collision with target
-        if (spaceshipX == targetX && spaceshipY == targetY) {
-            displayCentered("Congratulations! You reached the target destination.");
-            gameover = true;
+        else {
+            cout << "Incorrect. The correct answer is: " << questions[i].second << endl;
         }
-
-        // Prompt user for action
-        displayCentered("Use arrow keys to control the spaceship. Press 'Q' to quit.");
-
-        // Handle user input
-        char key;
-        cin >> key;
-        switch (key) {
-        case 'Q':
-        case 'q':
-            gameover = true;
-            break;
-        case 'W':
-        case 'w':
-            accelerationY = -gravity;
-            break;
-        case 'S':
-        case 's':
-            accelerationY = gravity;
-            break;
-        case 'A':
-        case 'a':
-            accelerationX = -gravity;
-            break;
-        case 'D':
-        case 'd':
-            accelerationX = gravity;
-            break;
-        default:
-            break;
-        }
+        cout << endl;
     }
+
+    // Display final score
+    cout << "Quiz ended. Your score is: " << score << "/" << totalQuestions << endl;
+    cout << "Press Enter to return to the main menu." << endl;
+    cin.ignore();
+    cin.get();
 }
 
 void displayPlanetInfo(const Planet& planet) {
@@ -147,34 +120,22 @@ void displayPlanetInfo(const Planet& planet) {
     displayCentered("Gravity: " + to_string(planet.gravity) + " m/s^2");
     displayCentered("Interesting Fact: " + planet.fact);
     displayCentered("=================");
-    displayCentered("Press any key to go back to main menu.");
-    cin.ignore(); // Ignore any previous newline character
-    cin.get(); // Wait for user input
+    char key;
+    cin.ignore(); // Ignore any newline characters in the input buffer
+    cin >> key;
 }
-
-
 
 int main() {
     // Define planets
     vector<Planet> planets = {
-
-        {"Mercury", 3.7, "Mercury has the largest temperature variations of any planet in the Solar System."},
-        {"Venus", 8.87, "Venus rotates in the opposite direction to most other planets."},
-        {"Earth", 9.81, "Earth is the only planet in the Solar System known to support life."},
-        {"Mars", 3.71, "Mars is home to the tallest volcano and the largest canyon in the Solar System."},
-        {"Jupiter", 24.79, "Jupiter has the shortest day of all the planets."},
-        {"Saturn", 10.44, "Saturn is the least dense of all the planets in the Solar System."},
-        {"Uranus", 8.69, "Uranus is the coldest planet in the Solar System."},
-        {"Neptune", 11.15, "Neptune's blue color is due to the presence of methane in its atmosphere."},
-
-        {"Mercury", 3.7},
-        {"Venus", 8.87},
-        {"Earth", 9.81},
-        {"Mars", 3.71},
-        {"Jupiter", 24.79},
-        {"Saturn", 10.44},
-        {"Uranus", 8.69},
-        {"Neptune", 11.15}
+    {"Mercury", 3.7, "Mercury has the largest temperature variations of any planet in the Solar System. And the closest planet to the Sun. The smallest planet in our Solar system."},
+    {"Venus", 8.87, "Venus rotates in the opposite direction to most other planets. Has two nicknames 'Morning Star' and 'Evening Star'. Sometimes called Earth's sister planet. Has the longest day. Known as the 'Evening Star'."},
+    {"Earth", 9.81, "Earth is the only planet in the Solar System known to support life. Known as the 'Blue Planet'. The only one known to support life."},
+    {"Mars", 3.71, "Mars is home to the tallest volcano and the largest canyon in the Solar System. Also known as The Red Planet. Has the highest mountain in the solar system. Known as the 'Red Planet'."},
+    {"Jupiter", 24.79, "Jupiter has the shortest day of all the planets. The largest planet in the Solar system and the planet with the most moons. The planet with the shortest day."},
+    {"Saturn", 10.44, "Saturn is the least dense of all the planets in the Solar System. Well known for its beautiful rings. Has the most rings."},
+    {"Uranus", 8.69, "Uranus is the coldest planet in the Solar System. Spins on its side."},
+    {"Neptune", 11.15, "Neptune's blue color is due to the presence of methane in its atmosphere. Known for its Great Dark Spot. Known as the 'Ice Giant'."}
     };
 
     int option;
@@ -195,17 +156,23 @@ int main() {
             system("cls");
             displayCentered("==== Planets ====");
             for (int i = 0; i < planets.size(); ++i) {
-                displayCentered(to_string(i + 1) + ". " + planets[i].name + " (Gravity: " + to_string(planets[i].gravity) + " m/s^2)");
+                displayCentered(to_string(i + 1) + ". " + planets[i].name);
             }
             displayCentered("================");
-            displayCentered("Press any key to go back to main menu.");
-            cin.ignore(); // Ignore any previous newline character
-            cin.get(); // Wait for user input
+            displayCentered("Enter the number of the planet to view its information.");
+            int planetOption;
+            cin >> planetOption;
+            if (planetOption >= 1 && planetOption <= planets.size()) {
+                displayPlanetInfo(planets[planetOption - 1]);
+            }
+            else {
+                displayCentered("Invalid planet option. Please try again.");
+            }
             displayMainMenu = true;
             break;
         }
         case 2:
-            startGame(planets);
+            startGame();
             displayMainMenu = true;
             break;
         case 3:
