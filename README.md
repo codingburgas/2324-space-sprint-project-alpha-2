@@ -29,6 +29,7 @@ Our idea is about Solar System and the gravity of the planets.
 > 4. **Back-end Developer** - **VBBoyanov22**	
    - ***GitHub profile***: [***VBBoyanov22***](https://github.com/VBBoyanov22)
 <br>
+
 ## ⚒️Tools  <a name="technologies"></a>
 <p align="left"> 
 <img src="https://raw.githubusercontent.com/sbivanov22/baklava/main/assets/icons/gitHubIcon.png" alt="GitHub logo" width=48px>
