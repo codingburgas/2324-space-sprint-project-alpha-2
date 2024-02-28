@@ -1,7 +1,7 @@
 <h1 align="center">Alpha 2</h1>
 <br>
 <p align="center">
-<img width="45%" src="./design/logo.png"/>
+<img width="45%" src="./assets/logo.png"/>
 <br>
  
 ## 📋 Table of contents
