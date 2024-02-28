@@ -9,7 +9,7 @@ Our idea is about Solar System and the gravity of the planets.
 #### 
  
 ## 📄 Documentation and Presentation
-<a href="https://github.com/codingburgas/2324-space-sprint-project-alpha-2/raw/main/documentation/Alpha2-documentation.docx"><img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=20px /></a>[Documentation]()
+<a href="https://github.com/codingburgas/2324-space-sprint-project-alpha-2/raw/main/documentation/Alpha2-documentation.docx"><img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=20px /></a>[Documentation](https://github.com/codingburgas/2324-space-sprint-project-alpha-2/raw/main/documentation/Alpha2-documentation.docx)
 <br>
 <a href="https://github.com/codingburgas/2324-space-sprint-project-alpha-2/raw/main/documentation/Alpha2-presentation.pptx"><img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" alt="MS PowerPoint logo" width=20px ></a>[Presentation]()
 
