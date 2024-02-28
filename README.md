@@ -12,7 +12,7 @@
   - [Installation](#instal)
  
 ## 💡 Our Idea <a name="idea"></a>
-Our idea is about Solar System and the gravity of the planets.
+Our objective is to develop an educational and enjoyable game focused on planetary exploration and learning.
 #### 
 ## 📄 Documentation and Presentation <a name="docs"></a>
 <img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=20px />[Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/sbivanov22_codingburgas_bg/Edvlv8nX-vVCsUmEsuBXmHQBwQQSc4-Zsuf7B2Eeb66lgw?e=vBbK4J)
